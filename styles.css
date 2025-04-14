@@ -334,7 +334,7 @@ tbody tr:nth-child(even) td:last-child {
 
   /* Ajustes visuales para la barra de fechas en móvil */
   .fila-producto:hover .barra-fechas {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     text-align: center;
     font-size: 12px;
@@ -342,7 +342,7 @@ tbody tr:nth-child(even) td:last-child {
   }
 
   .barra-fechas span {
-    background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente */
+    background-color: #ffffff26; /* Fondo semitransparente */
     padding: 6px 10px;
     border-radius: 8px;
     display: inline-block;
