@@ -11,56 +11,56 @@ html, body {
 
 /* Contenedor principal del layout en flexbox */
 .container {
-  display: flex; /* Usa flexbox para distribuir elementos */
-  flex-wrap: wrap; /* Permite que los elementos pasen a otra línea si es necesario */
-  min-height: 100vh; /* Ocupa mínimo toda la altura de la pantalla */
-  overflow-x: hidden; /* Oculta desbordamiento horizontal */
-  width: 100%; /* Abarca todo el ancho */
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Sección del formulario (columna izquierda) */
 .form-section {
-  flex: 1; /* Toma una fracción proporcional del espacio disponible */
+  flex: 1;
   background-color: #003b4f;
   padding: 40px;
-  display: flex; /* Flexbox interno para layout vertical */
-  flex-direction: column; /* Elementos hijos apilados verticalmente */
-  gap: 18px; /* Espacio entre elementos hijos */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   box-sizing: border-box; 
   width: 100%;
 }
 
 /* Estilos generales para los inputs dentro del formulario */
 .form-section input {
-  padding: 15px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de fuente legible */
-  border-radius: 10px; /* Bordes redondeados */
-  border: none; /* Elimina el borde por defecto */
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
   background-color: white;
   color: black;
 }
 
 /* Contenedor para los botones del formulario */
 .buttons {
-  display: flex; /* Flexbox para distribución */
-  flex-wrap: wrap; /* Permite que los botones pasen a otra línea */
-  gap: 12px; /* Espacio entre botones */
-  margin-top: auto; /* Empuja los botones al final del contenedor */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
 }
 
 /* Estilos base para todos los botones */
 .buttons button {
-  flex: 1 1 100%; /* Botón ocupa todo el ancho en una columna */
-  padding: 16px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de fuente */
-  font-weight: bold; /* Texto en negrita */
-  border: none; /* Elimina borde por defecto */
-  border-radius: 14px; /* Bordes redondeados */
+  flex: 1 1 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 14px;
   background-color: #f4a300;
   color: white;
-  cursor: pointer; /* Cursor tipo puntero al pasar por encima */
-  transition: background-color 0.3s ease; /* Animación al hacer hover */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidad */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo para botones al pasar el cursor encima */
@@ -71,33 +71,33 @@ html, body {
 /* Ajusta ancho de los botones 2 y 3 en pantallas más grandes */
 .buttons button:nth-child(2),
 .buttons button:nth-child(3) {
-  flex: 1 1 calc(50% - 6px); /* Mitad del ancho menos espacio del gap */
+  flex: 1 1 calc(50% - 6px);
 }
 
-/* Sección derecha*/
+/* Sección derecha */
 .table-section {
   flex: 1.5;
   background-color: #0e0e11;
-  padding: 40px; /* Espaciado interno */
-  display: flex; /* Flexbox para layout interno */
-  flex-direction: column; /* Organización vertical */
-  box-sizing: border-box; /* Incluye padding en el ancho total */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   width: 100%;
-  overflow-x: auto; /* Habilita scroll horizontal si es necesario */
+  overflow-x: auto;
 }
 
 /* Encabezado de la sección de la tabla */
 .table-section header {
-  display: flex; /* Flexbox para alinear contenido horizontalmente */
-  justify-content: space-between; /* Espacio entre título y logo */
-  align-items: center; /* Centra verticalmente */
-  margin-bottom: 25px; /* Espacio inferior */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
 /* Agrupación del título principal y subtítulo */
 .title-group {
-  display: flex; /* Flexbox para apilar verticalmente */
-  flex-direction: column; /* Columnas */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Estilo para el título principal */
@@ -117,14 +117,14 @@ html, body {
 /* Estilo del logo */
 .logo {
   height: 80px;
-  object-fit: contain; /* Escala manteniendo proporciones */
+  object-fit: contain;
 }
 
 /* Estilos generales para la tabla */
 table {
   width: 100%;
-  border-collapse: separate; /* Celdas separadas */
-  border-spacing: 0 12px; /* Espacio vertical entre filas */
+  border-collapse: separate;
+  border-spacing: 0 12px;
   font-size: 18px;
 }
 
@@ -140,9 +140,9 @@ td {
   padding: 16px;
   background-color: #ffffff;
   color: #000000;
-  text-align: left; /* Texto alineado a la izquierda */
-  border-radius: 12px; /* Bordes redondeados */
-  position: relative; /* Posicionamiento relativo para overlays */
+  text-align: left;
+  border-radius: 12px;
+  position: relative;
 }
 
 /* Estilo específico para la última celda de cada fila */
@@ -166,34 +166,34 @@ tbody tr:nth-child(even) td:last-child {
 
 /* Fila de producto con efectos en hover */
 .fila-producto {
-  overflow: hidden; /* Oculta contenido desbordado */
-  position: relative; /* Para posicionar elementos hijos */
-  transition: all 0.3s ease; /* Transición suave */
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 /* Contenido de la fila visible por defecto */
 .fila-producto .contenido-producto {
-  display: flex; /* Distribuye nombre y datos */
-  justify-content: space-between; /* Espacio entre columnas */
-  align-items: center; /* Alineación vertical */
-  transition: opacity 0.3s ease; /* Transición al ocultarse */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 0.3s ease;
 }
 
 /* Barra oculta de fechas dentro de la fila */
 .fila-producto .barra-fechas {
-  position: absolute; /* Superpuesta encima */
-  inset: 0; /* Ocupa todo el contenedor */
+  position: absolute;
+  inset: 0;
   background-color: #f4a300;
   color: white;
   font-size: 14px;
-  padding: 14px 20px; /* Espaciado interno */
+  padding: 14px 20px;
   border-radius: 12px;
-  display: none; /* Oculta por defecto */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  display: none;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
-  z-index: 2; /* Asegura que esté sobre otros elementos */
-  gap: 20px; /* Separa los textos de fechas */
+  z-index: 2;
+  gap: 20px; /* Espacio entre fecha de recibido y vencimiento */
 }
 
 /* Oculta el contenido normal al hacer hover */
@@ -208,17 +208,17 @@ tbody tr:nth-child(even) td:last-child {
 
 /* Contenedor del buscador */
 .search-bar {
-  margin-top: auto; /* Empuja al final del contenedor */
-  padding-top: 30px; /* Espacio superior */
+  margin-top: auto;
+  padding-top: 30px;
 }
 
 /* Estilo del input de búsqueda */
 .search-bar input {
-  width: 100%; /* Abarca todo el contenedor */
+  width: 100%;
   padding: 16px;
-  border-radius: 20px; /* Bordes redondeados */
-  border: none; /* Sin borde */
-  font-size: 16px; /* Tamaño de fuente */
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
   background-color: #dcdcdc;
   color: #333;
   font-weight: bold;
@@ -231,6 +231,13 @@ tbody tr:nth-child(even) td:last-child {
 
 /* Estilo responsive */
 @media (max-width: 768px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
   .container {
     flex-direction: column;
     height: auto;
@@ -240,6 +247,8 @@ tbody tr:nth-child(even) td:last-child {
   .form-section,
   .table-section {
     flex: 1;
+    min-height: 0;
+    height: auto;
     padding: 5%;
     box-sizing: border-box;
     width: 100%;
@@ -249,7 +258,8 @@ tbody tr:nth-child(even) td:last-child {
     gap: 1em;
   }
 
-  .form-section input {
+  .form-section input,
+  .form-section select {
     font-size: 1em;
     padding: 1em;
     width: 100%;
@@ -272,7 +282,12 @@ tbody tr:nth-child(even) td:last-child {
 
   table {
     font-size: 16px;
+    width: 100%;
     table-layout: fixed;
+  }
+
+  .table-section {
+    overflow-x: hidden;
   }
 
   .title-group .main-title {
@@ -300,10 +315,16 @@ tbody tr:nth-child(even) td:last-child {
   }
 
   .search-bar input {
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
     font-size: 16px;
     padding: 12px;
     width: 100%;
     box-sizing: border-box;
+    z-index: 11;
+    position: relative;
+    pointer-events: none;
   }
 
   .form-section label {
