@@ -203,6 +203,7 @@ tbody tr:nth-child(even) td:last-child {
 /* Muestra la barra de fechas al hacer hover */
 .fila-producto:hover .barra-fechas {
   display: flex;
+  gap:20px;
 }
 
 /* Contenedor del buscador */
