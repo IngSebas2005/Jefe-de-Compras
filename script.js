@@ -56,8 +56,9 @@ function renderInventario() {
     fila.addEventListener('click', () => {
       idSeleccionado = prod.id;
       cargarProductoEnFormulario(prod);
-      renderInventario(); // Actualiza la tabla para reflejar visualmente la selección
+      // No renderices la tabla aquí
     });
+    
 
     tabla.appendChild(fila);
   });
@@ -96,7 +97,10 @@ function eliminarProducto() {
 // Reemplaza los datos del producto cuyo ID coincide con el ingresado, manteniendo el ID
 function modificarProducto() {
   const id = document.getElementById('id').value;
-  const index = inventario.findIndex(item => item.id === id);
+  const index = inventario.findIndex(item => item.id === idSeleccionado);
+  console.log('idSeleccionado:', idSeleccionado);
+  console.log('index encontrado:', index);
+
   if (index !== -1) {
     inventario[index] = {
       nombre: document.getElementById('nombre').value,
