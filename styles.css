@@ -179,20 +179,18 @@ tbody tr:nth-child(even) td:last-child {
   transition: opacity 0.3s ease; /* Transición al ocultarse */
 }
 
-/* Barra oculta de fechas dentro de la fila */
+/* Barra de fechas dentro de la fila */
 .fila-producto .barra-fechas {
-  position: absolute; /* Superpuesta encima */
-  inset: 0; /* Ocupa todo el contenedor */
+  display: flex; /* Flexbox para mostrar contenido en filas */
+  justify-content: space-around; /* Espacio entre los elementos de fechas */
+  align-items: center; /* Alineación vertical */
   background-color: #f4a300;
   color: white;
   font-size: 14px;
-  padding: 14px 20px; /* Espaciado interno */
+  padding: 12px 16px; /* Espaciado interno */
   border-radius: 12px;
-  display: none; /* Oculta por defecto */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
   font-weight: bold;
-  z-index: 2; /* Asegura que esté sobre otros elementos */
+  gap: 20px; /* Espacio entre los elementos de la fecha */
 }
 
 /* Oculta el contenido normal al hacer hover */
@@ -203,7 +201,6 @@ tbody tr:nth-child(even) td:last-child {
 /* Muestra la barra de fechas al hacer hover */
 .fila-producto:hover .barra-fechas {
   display: flex;
-  gap:20px;
 }
 
 /* Contenedor del buscador */
@@ -229,7 +226,6 @@ tbody tr:nth-child(even) td:last-child {
   color: #666;
 }
 
-/* Estilo responsive*/
 /* Estilo responsive*/
 @media (max-width: 768px) {
   html, body {
@@ -333,5 +329,3 @@ tbody tr:nth-child(even) td:last-child {
     margin-bottom: -8px;
   }
 }
-
-
