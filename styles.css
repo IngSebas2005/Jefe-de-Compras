@@ -1,15 +1,14 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Evita el scroll horizontal */
+  overflow-x: hidden;
   width: 100%;
   height: auto;
-  font-family: "Montserrat", sans-serif; /* Fuente base para el sitio */
+  font-family: "Montserrat", sans-serif;
   background-color: #003b4f;
   color: #ffffff;
 }
 
-/* Contenedor principal del layout en flexbox */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -18,7 +17,6 @@ html, body {
   width: 100%;
 }
 
-/* Sección del formulario (columna izquierda) */
 .form-section {
   flex: 1;
   background-color: #003b4f;
@@ -30,7 +28,6 @@ html, body {
   width: 100%;
 }
 
-/* Estilos generales para los inputs dentro del formulario */
 .form-section input {
   padding: 15px;
   font-size: 16px;
@@ -40,7 +37,6 @@ html, body {
   color: black;
 }
 
-/* Contenedor para los botones del formulario */
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +44,6 @@ html, body {
   margin-top: auto;
 }
 
-/* Estilos base para todos los botones */
 .buttons button {
   flex: 1 1 100%;
   padding: 16px;
@@ -63,18 +58,15 @@ html, body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para botones al pasar el cursor encima */
 .buttons button:hover {
   background-color: #d98f00;
 }
 
-/* Ajusta ancho de los botones 2 y 3 en pantallas más grandes */
 .buttons button:nth-child(2),
 .buttons button:nth-child(3) {
   flex: 1 1 calc(50% - 6px);
 }
 
-/* Sección derecha */
 .table-section {
   flex: 1.5;
   background-color: #0e0e11;
@@ -86,7 +78,6 @@ html, body {
   overflow-x: auto;
 }
 
-/* Encabezado de la sección de la tabla */
 .table-section header {
   display: flex;
   justify-content: space-between;
@@ -94,33 +85,28 @@ html, body {
   margin-bottom: 25px;
 }
 
-/* Agrupación del título principal y subtítulo */
 .title-group {
   display: flex;
   flex-direction: column;
 }
 
-/* Estilo para el título principal */
 .title-group .main-title {
   font-size: 24px;
   font-weight: bold;
   color: #ffa500;
 }
 
-/* Estilo para el subtítulo */
 .title-group .sub-title {
   font-size: 20px;
   font-weight: bold;
   color: white;
 }
 
-/* Estilo del logo */
 .logo {
   height: 80px;
   object-fit: contain;
 }
 
-/* Estilos generales para la tabla */
 table {
   width: 100%;
   border-collapse: separate;
@@ -128,14 +114,12 @@ table {
   font-size: 18px;
 }
 
-/* Estilo del encabezado de la tabla */
 thead {
   color: #ffa500;
   text-align: center;
   font-weight: bold;
 }
 
-/* Estilos generales para las celdas */
 td {
   padding: 16px;
   background-color: #ffffff;
@@ -145,7 +129,6 @@ td {
   position: relative;
 }
 
-/* Estilo específico para la última celda de cada fila */
 tbody tr td:last-child {
   background-color: #ffffff;
   color: #000000;
@@ -154,24 +137,20 @@ tbody tr td:last-child {
   width: 60px;
 }
 
-/* Estilo para filas pares alternas */
 tbody tr:nth-child(even) td {
   background-color: #f3f3f3;
 }
 
-/* Última celda de las filas pares con fondo diferente */
 tbody tr:nth-child(even) td:last-child {
   background-color: #f4a300;
 }
 
-/* Fila de producto con efectos en hover */
 .fila-producto {
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease;
 }
 
-/* Contenido de la fila visible por defecto */
 .fila-producto .contenido-producto {
   display: flex;
   justify-content: space-between;
@@ -179,7 +158,6 @@ tbody tr:nth-child(even) td:last-child {
   transition: opacity 0.3s ease;
 }
 
-/* Barra oculta de fechas dentro de la fila */
 .fila-producto .barra-fechas {
   position: absolute;
   inset: 0;
@@ -193,26 +171,22 @@ tbody tr:nth-child(even) td:last-child {
   align-items: center;
   font-weight: bold;
   z-index: 2;
-  gap: 20px; /* Espacio entre fecha de recibido y vencimiento */
+  gap: 20px;
 }
 
-/* Oculta el contenido normal al hacer hover */
 .fila-producto:hover .contenido-producto {
   opacity: 0;
 }
 
-/* Muestra la barra de fechas al hacer hover */
 .fila-producto:hover .barra-fechas {
   display: flex;
 }
 
-/* Contenedor del buscador */
 .search-bar {
   margin-top: auto;
   padding-top: 30px;
 }
 
-/* Estilo del input de búsqueda */
 .search-bar input {
   width: 100%;
   padding: 16px;
@@ -224,7 +198,6 @@ tbody tr:nth-child(even) td:last-child {
   font-weight: bold;
 }
 
-/* Estilo del placeholder del input */
 .search-bar input::placeholder {
   color: #666;
 }
@@ -330,5 +303,21 @@ tbody tr:nth-child(even) td:last-child {
   .form-section label {
     font-size: 14px;
     margin-bottom: -8px;
+  }
+
+  /* 👇 Ajuste para las fechas en mobile */
+  .fila-producto:hover .barra-fechas {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    font-size: 13px;
+    padding: 16px;
+  }
+
+  /* Estilo visual para cada fecha */
+  .barra-fechas span {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 8px;
   }
 }
