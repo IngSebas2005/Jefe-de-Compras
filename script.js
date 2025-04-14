@@ -147,8 +147,10 @@ function buscarProducto() {
       tabla.appendChild(fila);
     });
 }
-// Permite que al hacer clic en la barra de búsqueda completa se enfoque el input
-  document.querySelector('.search-bar').addEventListener('click', () => {
-  document.getElementById('buscador').focus();
+// Asegura que al hacer clic en la barra de búsqueda, se enfoque el input
+document.querySelector('.search-bar').addEventListener('click', (e) => {
+  // Evita que si se hizo clic directamente en el input, vuelva a hacer focus
+  if (e.target !== document.getElementById('buscador')) {
+    document.getElementById('buscador').focus();
+  }
 });
-
