@@ -332,19 +332,21 @@ tbody tr:nth-child(even) td:last-child {
     margin-bottom: -8px;
   }
 
-  /* Ajustes visuales para la barra de fechas en móvil */
-  .fila-producto:hover .barra-fechas {
-    flex-direction: row;
-    gap: 10px;
-    text-align: center;
-    font-size: 12px;
-    padding: 16px;
-  }
-
-  .barra-fechas span {
-    background-color: #ffffff26; /* Fondo semitransparente */
-    padding: 6px 10px;
-    border-radius: 8px;
-    display: inline-block;
-  }
+/* Ajustes visuales para la barra de fechas en móvil */
+.fila-producto:hover .barra-fechas {
+  flex-direction: row;
+  gap: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding: 16px;
+  flex-wrap: wrap;
 }
+
+.barra-fechas span {
+  background-color: #ffffff26;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
