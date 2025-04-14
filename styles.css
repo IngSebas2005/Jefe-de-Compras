@@ -1,0 +1,320 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita el scroll horizontal */
+  width: 100%;
+  height: auto;
+  font-family: "Montserrat", sans-serif; /* Fuente base para el sitio */
+  background-color: #003b4f;
+  color: #ffffff;
+}
+
+/* Contenedor principal del layout en flexbox */
+.container {
+  display: flex; /* Usa flexbox para distribuir elementos */
+  flex-wrap: wrap; /* Permite que los elementos pasen a otra línea si es necesario */
+  min-height: 100vh; /* Ocupa mínimo toda la altura de la pantalla */
+  overflow-x: hidden; /* Oculta desbordamiento horizontal */
+  width: 100%; /* Abarca todo el ancho */
+}
+
+/* Sección del formulario (columna izquierda) */
+.form-section {
+  flex: 1; /* Toma una fracción proporcional del espacio disponible */
+  background-color: #003b4f;
+  padding: 40px;
+  display: flex; /* Flexbox interno para layout vertical */
+  flex-direction: column; /* Elementos hijos apilados verticalmente */
+  gap: 18px; /* Espacio entre elementos hijos */
+  box-sizing: border-box; 
+  width: 100%;
+}
+
+/* Estilos generales para los inputs dentro del formulario */
+.form-section input {
+  padding: 15px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente legible */
+  border-radius: 10px; /* Bordes redondeados */
+  border: none; /* Elimina el borde por defecto */
+  background-color: white;
+  color: black;
+}
+
+/* Contenedor para los botones del formulario */
+.buttons {
+  display: flex; /* Flexbox para distribución */
+  flex-wrap: wrap; /* Permite que los botones pasen a otra línea */
+  gap: 12px; /* Espacio entre botones */
+  margin-top: auto; /* Empuja los botones al final del contenedor */
+}
+
+/* Estilos base para todos los botones */
+.buttons button {
+  flex: 1 1 100%; /* Botón ocupa todo el ancho en una columna */
+  padding: 16px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  border: none; /* Elimina borde por defecto */
+  border-radius: 14px; /* Bordes redondeados */
+  background-color: #f4a300;
+  color: white;
+  cursor: pointer; /* Cursor tipo puntero al pasar por encima */
+  transition: background-color 0.3s ease; /* Animación al hacer hover */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidad */
+}
+
+/* Estilo para botones al pasar el cursor encima */
+.buttons button:hover {
+  background-color: #d98f00;
+}
+
+/* Ajusta ancho de los botones 2 y 3 en pantallas más grandes */
+.buttons button:nth-child(2),
+.buttons button:nth-child(3) {
+  flex: 1 1 calc(50% - 6px); /* Mitad del ancho menos espacio del gap */
+}
+
+/* Sección derecha*/
+.table-section {
+  flex: 1.5;
+  background-color: #0e0e11;
+  padding: 40px; /* Espaciado interno */
+  display: flex; /* Flexbox para layout interno */
+  flex-direction: column; /* Organización vertical */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+  width: 100%;
+  overflow-x: auto; /* Habilita scroll horizontal si es necesario */
+}
+
+/* Encabezado de la sección de la tabla */
+.table-section header {
+  display: flex; /* Flexbox para alinear contenido horizontalmente */
+  justify-content: space-between; /* Espacio entre título y logo */
+  align-items: center; /* Centra verticalmente */
+  margin-bottom: 25px; /* Espacio inferior */
+}
+
+/* Agrupación del título principal y subtítulo */
+.title-group {
+  display: flex; /* Flexbox para apilar verticalmente */
+  flex-direction: column; /* Columnas */
+}
+
+/* Estilo para el título principal */
+.title-group .main-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffa500;
+}
+
+/* Estilo para el subtítulo */
+.title-group .sub-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Estilo del logo */
+.logo {
+  height: 80px;
+  object-fit: contain; /* Escala manteniendo proporciones */
+}
+
+/* Estilos generales para la tabla */
+table {
+  width: 100%;
+  border-collapse: separate; /* Celdas separadas */
+  border-spacing: 0 12px; /* Espacio vertical entre filas */
+  font-size: 18px;
+}
+
+/* Estilo del encabezado de la tabla */
+thead {
+  color: #ffa500;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Estilos generales para las celdas */
+td {
+  padding: 16px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: left; /* Texto alineado a la izquierda */
+  border-radius: 12px; /* Bordes redondeados */
+  position: relative; /* Posicionamiento relativo para overlays */
+}
+
+/* Estilo específico para la última celda de cada fila */
+tbody tr td:last-child {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+}
+
+/* Estilo para filas pares alternas */
+tbody tr:nth-child(even) td {
+  background-color: #f3f3f3;
+}
+
+/* Última celda de las filas pares con fondo diferente */
+tbody tr:nth-child(even) td:last-child {
+  background-color: #f4a300;
+}
+
+/* Fila de producto con efectos en hover */
+.fila-producto {
+  overflow: hidden; /* Oculta contenido desbordado */
+  position: relative; /* Para posicionar elementos hijos */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Contenido de la fila visible por defecto */
+.fila-producto .contenido-producto {
+  display: flex; /* Distribuye nombre y datos */
+  justify-content: space-between; /* Espacio entre columnas */
+  align-items: center; /* Alineación vertical */
+  transition: opacity 0.3s ease; /* Transición al ocultarse */
+}
+
+/* Barra oculta de fechas dentro de la fila */
+.fila-producto .barra-fechas {
+  position: absolute; /* Superpuesta encima */
+  inset: 0; /* Ocupa todo el contenedor */
+  background-color: #f4a300;
+  color: white;
+  font-size: 14px;
+  padding: 14px 20px; /* Espaciado interno */
+  border-radius: 12px;
+  display: none; /* Oculta por defecto */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  font-weight: bold;
+  z-index: 2; /* Asegura que esté sobre otros elementos */
+}
+
+/* Oculta el contenido normal al hacer hover */
+.fila-producto:hover .contenido-producto {
+  opacity: 0;
+}
+
+/* Muestra la barra de fechas al hacer hover */
+.fila-producto:hover .barra-fechas {
+  display: flex;
+}
+
+/* Contenedor del buscador */
+.search-bar {
+  margin-top: auto; /* Empuja al final del contenedor */
+  padding-top: 30px; /* Espacio superior */
+}
+
+/* Estilo del input de búsqueda */
+.search-bar input {
+  width: 100%; /* Abarca todo el contenedor */
+  padding: 16px;
+  border-radius: 20px; /* Bordes redondeados */
+  border: none; /* Sin borde */
+  font-size: 16px; /* Tamaño de fuente */
+  background-color: #dcdcdc;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Estilo del placeholder del input */
+.search-bar input::placeholder {
+  color: #666;
+}
+
+/* Estilo responsive*/
+@media (max-width: 768px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .form-section,
+  .table-section {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    padding: 5%;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .form-section {
+    gap: 1em;
+  }
+
+  .form-section input,
+  .form-section select {
+    font-size: 1em;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .buttons button {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  .buttons button:nth-child(1) {
+    flex: 1 1 100%;
+  }
+
+  table {
+    font-size: 16px;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .table-section {
+    overflow-x: hidden;
+  }
+
+  .title-group .main-title {
+    font-size: 20px;
+  }
+
+  .title-group .sub-title {
+    font-size: 16px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  td {
+    font-size: 14px;
+    padding: 10px;
+    word-wrap: break-word;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .form-section label {
+    font-size: 14px;
+    margin-bottom: -8px;
+  }
+}
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario CGS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Formulario de ingreso y edición de productos -->
+    <div class="form-section">
+      <input type="text" id="nombre" placeholder="Nombre" required />
+      <input type="text" id="distribuidor" placeholder="Distribuidor" required />
+      <label for="fechaRecibido">Fecha de recibido</label>
+      <input type="date" id="fechaRecibido" />
+
+      <label for="fechaVencimiento">Fecha de vencimiento</label>
+      <input type="date" id="fechaVencimiento" />
+
+      <input type="text" id="id" placeholder="ID del producto" required />
+      <input type="number" id="cantidad" placeholder="Cantidad" required />
+
+      <!-- Botones de acción para modificar, eliminar o agregar productos -->
+      <div class="buttons">
+        <button onclick="modificarProducto()">Modificar producto</button>
+        <button onclick="eliminarProducto()">Eliminar del inventario</button>
+        <button onclick="agregarProducto()">Agregar al inventario</button>
+      </div>
+    </div>
+
+    <!-- Sección de visualización del inventario con encabezado y tabla -->
+    <div class="table-section">
+      <header>
+        <div class="title-group">
+          <div class="main-title">Jefe de Compras</div>
+          <div class="sub-title">Inventario</div>
+        </div>
+        <img src="logo.png" alt="Logo CGS" class="logo" />
+      </header>
+
+      <!-- Tabla que muestra los productos del inventario -->
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Distribuidor</th>
+            <th>ID</th>
+            <th>Cant.</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-inventario">
+          <!-- Las filas de productos serán insertadas dinámicamente desde JavaScript -->
+        </tbody>
+      </table>
+
+      <!-- Campo de búsqueda que filtra productos en la tabla según el id -->
+      <div class="search-bar">
+        <input type="text" id="buscador" placeholder="Buscar un producto" oninput="buscarProducto()" />
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
