@@ -324,6 +324,7 @@ tbody tr:nth-child(even) td:last-child {
     box-sizing: border-box;
     z-index: 11;
     position: relative;
+    pointer-events: none;
   }
 
   .form-section label {
