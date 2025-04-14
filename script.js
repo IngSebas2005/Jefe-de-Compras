@@ -142,7 +142,6 @@ function buscarProducto() {
       fila.addEventListener('click', () => {
         idSeleccionado = prod.id;
         cargarProductoEnFormulario(prod);
-        renderInventario();
       });
       tabla.appendChild(fila);
     });
